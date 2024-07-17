@@ -10,9 +10,9 @@ class Dashboard extends CI_Controller
 		$this->template->load('template', 'v_dashboard');
 	}
 
-	public function account_settings()
+	public function account_setting()
 	{
-		$this->load->view('account_settings', array(
+		$this->template->load('template', 'v_akun', array(
 			'username' => $this->session->userdata('username'),
 			'email' => $this->session->userdata('email')
 		)

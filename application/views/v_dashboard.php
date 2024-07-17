@@ -79,7 +79,7 @@
             <div class="position-relative">
                 <div class="row align-items-center justify-content-between">
                     <div class="col position-relative">
-                        <h2 class="text-primary">Selamat Datang, <?= $this->session->userdata('nama_lengkap') ?> !</h2>
+                        <h2 class="text-primary">Selamat Datang, <?= $this->session->userdata('username') ?> !</h2>
                         <p class="text-gray-700">Sudah siap bekerja hari ini ?</p>
                         <a class="btn btn-teal" href="<?= base_url('transaksi') ?>">Transaksi<i class="ml-1" data-feather="arrow-right"></i></a>
                     </div>

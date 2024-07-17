@@ -1,0 +1,31 @@
+.img-account-profile {
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.img-account-profile:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #0061f2;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0051c7;
+}
+
+.shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}

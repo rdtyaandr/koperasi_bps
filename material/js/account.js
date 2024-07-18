@@ -53,8 +53,8 @@ document.getElementById('password').addEventListener('focus', showPasswordFields
 document.getElementById('new_password').addEventListener('focus', showPasswordFields);
 document.getElementById('confirm_password').addEventListener('focus', showPasswordFields);
 
-function updateFileName(input) {
-    var fileName = input.files[0].name;
-    var label = document.getElementById('customFileLabel');
-    label.textContent = fileName;
-}
+// function updateFileName(input) {
+//     var fileName = input.files[0].name;
+//     var label = document.getElementById('customFileLabel');
+//     label.textContent = fileName;
+// }

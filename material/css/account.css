@@ -44,9 +44,9 @@
 }
 
 .custom-file-label {
-    margin-top: 16px;
-    margin-right: 6px;
-    margin-left: 6px;
+	margin-top: 16px;
+	margin-right: 6px;
+	margin-left: 6px;
 	border: 1px solid #ddd;
 	border-radius: 0.25rem;
 	padding: 0.5rem 1rem;
@@ -66,6 +66,31 @@
 	font-size: 0.875rem;
 	font-weight: 400;
 	color: #666;
+}
+
+.close {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #aaa;
+	border: none;
+	background: transparent;
+	padding: 0;
+	cursor: pointer;
+}
+
+.close:hover {
+	color: #666;
+}
+
+.close:active {
+	transform: scale(0.9);
+	transition: transform 0.2s ease;
+	border: none;
+}
+
+.close:focus {
+	outline: none;
+	box-shadow: none;
 }
 
 @keyframes fadeInDown {

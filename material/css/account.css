@@ -1,31 +1,81 @@
 .img-account-profile {
-    border: 3px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+	border: 3px solid #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease;
 }
 
 .img-account-profile:hover {
-    transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .card-header {
-    font-size: 1.25rem;
-    font-weight: bold;
+	font-size: 1.25rem;
+	font-weight: bold;
 }
 
 .form-label {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .btn-primary {
-    background-color: #0061f2;
-    border: none;
+	background-color: #0061f2;
+	border: none;
 }
 
 .btn-primary:hover {
-    background-color: #0051c7;
+	background-color: #0051c7;
 }
 
 .shadow-sm {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+#newPasswordFields {
+	transition: all 0.3s ease-in-out;
+}
+
+.animate__animated {
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+}
+
+.animate__fadeInDown {
+	animation-name: fadeInDown;
+}
+
+.custom-file-label {
+    margin-top: 16px;
+    margin-right: 6px;
+    margin-left: 6px;
+	border: 1px solid #ddd;
+	border-radius: 0.25rem;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+
+.custom-file-input {
+	display: none;
+}
+
+.custom-file-control {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	border: 1px solid #ddd;
+	border-radius: 0.25rem;
+	background-color: #f9f9f9;
+	font-size: 0.875rem;
+	font-weight: 400;
+	color: #666;
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
 }

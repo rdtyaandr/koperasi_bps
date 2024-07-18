@@ -4,7 +4,7 @@ function showPasswordFields() {
     const newPasswordFields = document.getElementById('newPasswordFields');
 
     passwordLabel.innerText = 'Masukkan password lama';
-    passwordInput.placeholder = 'Ketik disini';
+    passwordInput.placeholder = 'Ketik password lama anda disini';
     newPasswordFields.style.display = 'block';
     setTimeout(() => {
         newPasswordFields.style.opacity = 1;
@@ -12,6 +12,11 @@ function showPasswordFields() {
 }
 
 function resetPasswordFields() {
+    if (isFormInvalid()) {
+        showPasswordFields();
+        return; // Jangan menyembunyikan jika ada error pada form
+    }
+    
     const passwordLabel = document.querySelector('label[for="password"]');
     const passwordInput = document.getElementById('password');
     const newPasswordInput = document.getElementById('new_password');
@@ -40,6 +45,10 @@ function resetPasswordFields() {
     }, 300);
 }
 
+function isFormInvalid() {
+    return document.querySelector('.is-invalid') !== null;
+}
+
 document.addEventListener('click', function(event) {
     const form = document.querySelector('.card-body');
 
@@ -52,6 +61,14 @@ document.addEventListener('click', function(event) {
 document.getElementById('password').addEventListener('focus', showPasswordFields);
 document.getElementById('new_password').addEventListener('focus', showPasswordFields);
 document.getElementById('confirm_password').addEventListener('focus', showPasswordFields);
+
+// Panggil fungsi untuk menampilkan password fields jika ada form error
+if (isFormInvalid()) {
+    showPasswordFields();
+}
+if (!isFormInvalid()) {
+    resetPasswordFields();
+}
 
 // function updateFileName(input) {
 //     var fileName = input.files[0].name;

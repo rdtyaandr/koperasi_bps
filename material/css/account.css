@@ -93,6 +93,12 @@
 	box-shadow: none;
 }
 
+.invalid-feedback {
+    color: #dc3545; /* Warna teks merah */
+    font-size: 0.80rem; /* Ukuran font kecil */
+    margin-left: 15px; /* Margin kiri */
+}
+
 @keyframes fadeInDown {
 	from {
 		opacity: 0;

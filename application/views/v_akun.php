@@ -1,5 +1,6 @@
 <link href="<?= base_url() ?>material/css/account.css" rel="stylesheet" />
 <script src="<?= base_url() ?>material/js/account.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <div class="container-fluid">
     <h1 class="mt-4">Detail Akun</h1>
@@ -42,25 +43,43 @@
                         </div>
                         <div class="form-group">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username"
-                                value="<?= $this->session->userdata('username'); ?>" onclick="resetPasswordFields()">
+                            <input type="text"
+                                class="form-control <?= (form_error('username') != '') ? 'is-invalid' : '' ?>"
+                                id="username" name="username" value="<?= set_value('username', $username); ?>"
+                                onclick="resetPasswordFields()">
+                            <div class="invalid-feedback">
+                                <?= form_error('username'); ?>
+                            </div>
                         </div>
                         <div class="form-group" id="password-group">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password"
-                                placeholder="Kosongkan jika tidak ingin mengubah password"
+                            <input type="password"
+                                class="form-control <?= (form_error('password') != '') ? 'is-invalid' : '' ?>"
+                                id="password" name="password" placeholder="Kosongkan jika tidak ingin mengubah password"
                                 onclick="showPasswordFields()">
+                            <div class="invalid-feedback small ml-2">
+                                <?= form_error('password'); ?>
+                            </div>
                         </div>
                         <div id="newPasswordFields" style="display: none;">
                             <div class="form-group">
                                 <label for="new_password" class="form-label">Masukkan password baru</label>
-                                <input type="password" class="form-control" id="new_password" name="new_password"
-                                    placeholder="Ketik disini">
+                                <input type="password"
+                                    class="form-control <?= (form_error('new_password') != '') ? 'is-invalid' : '' ?>"
+                                    id="new_password" name="new_password" placeholder="Ketik password baru anda disini">
+                                <div class="invalid-feedback small ml-2">
+                                    <?= form_error('new_password'); ?>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="confirm_password" class="form-label">Masukkan ulang password baru</label>
-                                <input type="password" class="form-control" id="confirm_password"
-                                    name="confirm_password" placeholder="Ketik disini">
+                                <input type="password"
+                                    class="form-control <?= (form_error('confirm_password') != '') ? 'is-invalid' : '' ?>"
+                                    id="confirm_password" name="confirm_password"
+                                    placeholder="Ketik ulang password baru anda disini">
+                                <div class="invalid-feedback small ml-2">
+                                    <?= form_error('confirm_password'); ?>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary float-right">

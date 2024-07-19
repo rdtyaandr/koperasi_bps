@@ -50,7 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'dashboard';
+<<<<<<< HEAD
 $route['qrcode/index'] = 'qrcode/index';
 $route['barang/cetak_barcode'] = 'barang/cetak_barcode';
+=======
+>>>>>>> d4d1d0765e7925fdfba765f73c80b67aab37c57f
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

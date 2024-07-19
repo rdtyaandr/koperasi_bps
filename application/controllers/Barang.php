@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Barang extends CI_Controller
@@ -6,6 +7,13 @@ class Barang extends CI_Controller
 
 	public function __construct()
 	{
+=======
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Barang extends CI_Controller {
+
+	public function __construct(){
+>>>>>>> d4d1d0765e7925fdfba765f73c80b67aab37c57f
 		parent::__construct();
 		$this->load->model('m_barang');
 		$this->load->library('form_validation');
@@ -17,20 +25,32 @@ class Barang extends CI_Controller
 		$data['judul'] = 'Tabel Data Barang';
 		$data['barang'] = $this->m_barang->getAllBarang();
 		$this->template->load('template', 'barang/v_barang', $data);
+<<<<<<< HEAD
 
 	}
 
 	public function tambah()
 	{
+=======
+	}
+
+	public function tambah(){
+>>>>>>> d4d1d0765e7925fdfba765f73c80b67aab37c57f
 		$this->form_validation->set_rules('kode_barang', 'Kode Barang', 'required|is_unique[tb_barang.kode_barang]');
 		$this->form_validation->set_rules('nama_barang', 'Nama Barang', 'required');
 		$this->form_validation->set_rules('detail_barang', 'Detail Barang', 'required');
 		$this->form_validation->set_rules('harga_jual', 'Harga Jual', 'required');
 		$this->form_validation->set_rules('harga_beli', 'Harga Beli', 'required');
 
+<<<<<<< HEAD
 		if ($this->form_validation->run() == false) {
 			$data['judul'] = 'Tambah Data Barang';
 			$this->template->load('template', 'barang/v_tambahbarang', $data);
+=======
+		if($this->form_validation->run() == false){
+			$data['judul'] = 'Tambah Data Barang';
+			$this->template->load('template','barang/v_tambahbarang', $data);
+>>>>>>> d4d1d0765e7925fdfba765f73c80b67aab37c57f
 		} else {
 			$this->m_barang->tambahDataBarang();
 			$this->session->set_flashdata('flash', ' Ditambahkan');
@@ -38,6 +58,7 @@ class Barang extends CI_Controller
 		}
 	}
 
+<<<<<<< HEAD
 	public function ubah($id)
 	{
 		$this->form_validation->set_rules('kode_barang', 'Kode Barang', 'required');
@@ -46,6 +67,15 @@ class Barang extends CI_Controller
 			$data['kategori'] = ['ATK', 'PRC', 'SUP', 'AKB'];
 			$data['ubah'] = $this->m_barang->getBarangById($id);
 			$this->template->load('template', 'barang/v_ubahdatabarang', $data);
+=======
+	public function ubah($id){
+		$this->form_validation->set_rules('kode_barang', 'Kode Barang', 'required');
+		if($this->form_validation->run() == false){
+			$data['satuan'] = ['PCS', 'RIM', 'DUS'];
+			$data['kategori'] = ['ATK', 'PRC', 'SUP', 'AKB'];
+			$data['ubah'] = $this->m_barang->getBarangById($id);
+			$this->template->load('template','barang/v_ubahdatabarang', $data);
+>>>>>>> d4d1d0765e7925fdfba765f73c80b67aab37c57f
 		} else {
 			$this->m_barang->ubahDataBarang();
 			$this->session->set_flashdata('flash', ' Diubah');
@@ -54,6 +84,7 @@ class Barang extends CI_Controller
 	}
 
 	public function hapus($id)
+<<<<<<< HEAD
 	{
 		$this->m_barang->hapusBarang($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
@@ -100,5 +131,12 @@ class Barang extends CI_Controller
 		echo $html;
 	}
 
+=======
+    {
+        $this->m_barang->hapusBarang($id);
+        $this->session->set_flashdata('flash','Dihapus');
+        redirect('barang');
+    }
+>>>>>>> d4d1d0765e7925fdfba765f73c80b67aab37c57f
 
 }
